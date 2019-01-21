@@ -4,9 +4,14 @@ import java.util.Calendar;
 
 public class Greeting {
 	
+	Calendar calendar;
+	
+	public Greeting(Calendar calendar) {
+		this.calendar = calendar;
+	}
+	
 	public String getGreeting( Language language ) {
 		// Get current hour
-		Calendar calendar = Calendar.getInstance();
 		int hour = calendar.get( Calendar.HOUR_OF_DAY );
 		
 		// Find out the greeting language
@@ -25,5 +30,4 @@ public class Greeting {
 		// Return the message		
 		return Message.getMessage( moment, language );
 	}
-
 }
